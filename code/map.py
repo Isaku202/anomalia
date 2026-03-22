@@ -21,15 +21,15 @@ class Portail :
 
 class Map:
     """Classe pour gérer les informations liées à une map"""
-    def __init__(self, name, col, group, tmx_data, portails, musique, coffres = [], pnjs = [], monstres = [] ):
+    def __init__(self, name, col, group, tmx_data, portails, musique, coffres = None, pnjs = None, monstres = None):
         self.name = name
         self.col = col
         self.group = group
         self.tmx_data = tmx_data
-        self.portails = portails
-        self.pnjs = pnjs
-        self.monstres = monstres
-        self.coffres = coffres
+        self.portails = portails if portails is not None else []
+        self.pnjs = pnjs if pnjs is not None else []
+        self.monstres = monstres if monstres is not None else []
+        self.coffres = coffres if coffres is not None else []
         self.musiques = Musique()
         self.musique = musique
             
@@ -78,7 +78,7 @@ class MapManger :
         self.maps[self.current_map].joue_musique()
         self.ancienne_map = self.current_map
 
-    def enregistrer_map (self, name, portails = [], musique = None,  pnjs = []):
+    def enregistrer_map (self, name, portails = None, musique = None,  pnjs = None):
         if musique != None :
             pygame.init()
 

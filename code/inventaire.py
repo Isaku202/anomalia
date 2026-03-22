@@ -161,9 +161,9 @@ class Affichage_Inventaire  :
 
 
 class Inventaire(Affichage_Inventaire): 
-    def __init__(self, items=[]):
+    def __init__(self, items=None):
         super().__init__()
-        self.items_liste = items
+        self.items_liste = items if items is not None else []
         self.charge_items()
 
     def charge_items(self):

@@ -3,7 +3,7 @@ from LVL_UP import lvl_up
 
 
 class Personnage :
-    def __init__ (self, nom, niv , force, defence, pointDeVie, pointDeVieMax, agi, chance, sac = [], nbObjet = 0, nbObjet_max = 0, exp = 0, etat_potion =[]):
+    def __init__ (self, nom, niv , force, defence, pointDeVie, pointDeVieMax, agi, chance, sac = None, nbObjet = 0, nbObjet_max = 0, exp = 0, etat_potion = None):
         self.nom = nom
         self.niv = niv
         self.force = force
@@ -12,9 +12,11 @@ class Personnage :
         self.pointDeVieMax = pointDeVieMax
         self.agi = agi
         self.luk = chance
-        
+
         self.exp = exp
-        self.etat_potion = etat_potion
+        # Chaque instance a sa propre liste (pas de partage mémoire)
+        self.sac = sac if sac is not None else []
+        self.etat_potion = etat_potion if etat_potion is not None else []
 
     def afficherStats(self):
         """affiche les atributs du personnage"""

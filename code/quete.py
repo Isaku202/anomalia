@@ -1,6 +1,6 @@
 class Quete : 
-    def __init__(self, recompense, conditions = {}):
-        self.conditions = conditions
+    def __init__(self, recompense, conditions = None):
+        self.conditions = conditions if conditions is not None else {}
         self.recompense = recompense  
 
     def remplit (self, player) :
