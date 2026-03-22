@@ -85,7 +85,8 @@ class MapManger :
         tmx_data = pytmx.util_pygame.load_pygame(os.path.join(os.path.dirname(__file__), "..", "Map_graph", f"{name}.tmx"))
         map_data = pyscroll.data.TiledMapData(tmx_data)
         map_layer = pyscroll.orthographic.BufferedRenderer(map_data, self.screen.get_size())
-        map_layer.zoom = 0.25
+        from config import MAP_ZOOM
+        map_layer.zoom = MAP_ZOOM
 
         #Récupère les objets dans le calque objects de la map TILED
         col = []

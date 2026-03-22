@@ -1,4 +1,5 @@
 import pygame
+from config import ANIM_MONSTRE_SPEED, ANIM_MONSTRE_ATK_SPEED
 
 S = 0.5  # facteur d'échelle des sprite sheets
 
@@ -41,7 +42,7 @@ class AnimateSpriteMonstre (pygame.sprite.Sprite):
         """Permet de timer l'enchainement des images des animations de déplacement"""
         self.ani_counter +=1
 
-        if self.ani_counter >= 10:
+        if self.ani_counter >= ANIM_MONSTRE_SPEED:
             self.ani_counter = 0
             self.current_frame += 1
 
@@ -59,7 +60,7 @@ class AnimateSpriteMonstre (pygame.sprite.Sprite):
         """Permet de timer l'animation de l'attaque"""
         self.ani_counter +=1
 
-        if self.ani_counter >= 9:
+        if self.ani_counter >= ANIM_MONSTRE_ATK_SPEED:
             if not loop :
                 return True
 

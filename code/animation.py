@@ -1,4 +1,5 @@
 import pygame
+from config import ANIM_SPEED, ANIM_ATK_SPEED
 
 S = 0.5  # facteur d'échelle des sprite sheets
 
@@ -66,7 +67,7 @@ class AnimateSprite (pygame.sprite.Sprite):
         """Permet de timer l'enchainement des images des animations de déplacement du joueur"""
         self.ani_counter +=1
 
-        if self.ani_counter >= 10:
+        if self.ani_counter >= ANIM_SPEED:
             self.ani_counter = 0
             self.current_frame += 1
 
@@ -84,7 +85,7 @@ class AnimateSprite (pygame.sprite.Sprite):
         """Permet de timer l'enchainement des images des animations de l'attaque"""
         self.ani_counter +=1
 
-        if self.ani_counter >= 5:
+        if self.ani_counter >= ANIM_ATK_SPEED:
             self.ani_counter = 0
             self.current_frame += 1
 
