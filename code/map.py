@@ -51,8 +51,9 @@ class MapManger :
         self.maps = {}
         self.screen  = screen
         self.player = player
-        self.current_map = None  
+        self.current_map = None
         self.ancienne_map = None
+        self.dino_ending = False
 
         self.cron = Timer(700)
         
@@ -60,16 +61,16 @@ class MapManger :
         t = [Portail("Terre", "sortie_terre", "Map1", "entrée_Monde"), Portail("Terre", "entrée_grotte", "grotte", "entrée1_grotte")  ]
         g = [Portail("grotte", "sortie2_grotte", "Map1", "sortie_grotte_monde"), Portail("grotte", "sortie1_grotte","Terre" , "sortie_grotte")  ]
 
-        self.enregistrer_map("Map1",  m1, "fond_prairie.mp3") 
+        self.enregistrer_map("Map1",  m1, "fond_prairie.ogg") 
         self.enregistrer_map("Terre", t)
-        self.enregistrer_map("grotte", g, "dongeon.mp3")
+        self.enregistrer_map("grotte", g, "dongeon.ogg")
         
         self.effets = EffetSonore()
 
-        self.effets.charger("dégat", "coup_sur_player.mp3")
-        self.effets.charger("s1", "son_slime_1.mp3")
-        self.effets.charger("ms", "mort_slime.mp3")
-        self.effets.charger("s3", "son_slime_3.mp3")
+        self.effets.charger("dégat", "coup_sur_player.ogg")
+        self.effets.charger("s1", "son_slime_1.ogg")
+        self.effets.charger("ms", "mort_slime.ogg")
+        self.effets.charger("s3", "son_slime_3.ogg")
 
         
         self.current_map = "Map1"
@@ -282,8 +283,7 @@ class MapManger :
             sprite.etat_quete_paul = "apres"
         elif sprite.etat_quete_paul == "apres":
             #gère une des fins possible du jeu (Bad ending)
-            dino()
-            self.running = False
+            self.dino_ending = True
 
     def dessiner_barres_vie(self): #Partie faite par IA encadré par "#_________________"
         """Dessine les barres de vie au-dessus des monstres"""

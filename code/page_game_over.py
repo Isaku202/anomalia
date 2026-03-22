@@ -1,14 +1,14 @@
 from Timer import Timer
 import pygame
-import sys
+import sys, asyncio
 from musique import EffetSonore
 
 
 
-def game_over ():
+async def game_over ():
     pygame.init()
     effets = EffetSonore()
-    effets.charger("ah","oh_non.mp3")
+    effets.charger("ah","oh_non.ogg")
     effets.jouer("ah")
 
     # Constantes
@@ -74,5 +74,4 @@ def game_over ():
         pygame.display.flip()
         horloge.tick(FPS)
 
-    pygame.quit()
-    sys.exit()
+        await asyncio.sleep(0)

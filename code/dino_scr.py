@@ -1,13 +1,13 @@
-import pygame, os, sys
+import pygame, os, sys, asyncio
 from Timer import Timer
 from musique import EffetSonore
 import Game_over_dino
 
-def dino():
+async def dino():
     """Affiche le screamer du dinosaure"""
     pygame.init()
     effets = EffetSonore()
-    effets.charger("dino","dino.mp3")
+    effets.charger("dino","dino.ogg")
     effets.set_volume(1)
     effets.jouer("dino")
     # Constantes
@@ -38,13 +38,10 @@ def dino():
             en_cours = False
         
         ecran.blit(fond_image, (0, 0))
-        pygame.display.flip() 
-        horloge.tick(FPS)  
+        pygame.display.flip()
+        horloge.tick(FPS)
 
-    Game_over_dino.game_over()
-    pygame.quit()
-    sys.exit()
-#Execute pour tester 
-if __name__ == "__main__":
-    dino()
+        await asyncio.sleep(0)
+
+    await Game_over_dino.game_over()
     

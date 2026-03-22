@@ -1,10 +1,10 @@
 import pygame # type: ignore
 import interface as inter # type: ignore
-import map 
+import map, asyncio
 from dialogue import BoiteDialogue
 from player import Player # type: ignore
 from musique import EffetSonore
-from page_game_over import game_over 
+from page_game_over import game_over
 
 
 class Game : 
@@ -15,11 +15,11 @@ class Game :
         self.player = Player(0,0)
         self.map_manger = map.MapManger(self.screen, self.player)
         self.dialog_box = BoiteDialogue()
-        self.effets.charger("épée","epee_joueur.mp3")
-        self.effets.charger("dégat", "coup_sur_player.mp3")
-        self.effets.charger("s1", "son_slime_1.mp3")
-        self.effets.charger("s2", "son_slime_2.mp3")
-        self.effets.charger("s3", "son_slime_3.mp3")
+        self.effets.charger("épée","epee_joueur.ogg")
+        self.effets.charger("dégat", "coup_sur_player.ogg")
+        self.effets.charger("s1", "son_slime_1.ogg")
+        self.effets.charger("s2", "son_slime_2.ogg")
+        self.effets.charger("s3", "son_slime_3.ogg")
 
     def handle_input (self):
         if self.dialog_box.reading or self.player.bloque:
@@ -86,8 +86,8 @@ class Game :
 
 
 
-    def run (self):
-        #boucle du jeu 
+    async def run (self):
+        #boucle du jeu
 
         self.running = True
         while self.running:
@@ -103,7 +103,12 @@ class Game :
 
             if not self.player.estVivant():
                 self.running = False
-                game_over()
+                await game_over()
+
+            if self.map_manger.dino_ending:
+                self.running = False
+                from dino_scr import dino
+                await dino()
                 
 
             for event in pygame.event.get():        
@@ -131,4 +136,5 @@ class Game :
                         self.player.inventaire.ferme_inventaire()
                     else :
                         self.player.inventaire.ouvre_inventaire()
-pygame.quit()
+
+            await asyncio.sleep(0)

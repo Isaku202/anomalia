@@ -1,9 +1,9 @@
 from Timer import Timer
 import pygame
-import sys
+import sys, asyncio
 
 
-def game_over ():
+async def game_over ():
     """Affiche la fenetre de game over lié au dino"""
     pygame.init()
     # Constantes
@@ -69,5 +69,4 @@ def game_over ():
         pygame.display.flip()
         horloge.tick(FPS)
 
-    pygame.quit()
-    sys.exit()
+        await asyncio.sleep(0)

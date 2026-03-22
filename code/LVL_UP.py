@@ -1,8 +1,7 @@
-import pygame, os   
+import pygame, os, asyncio
 from Timer import Timer
 
-def lvl_up (screen):
-    print("LEVEL UP Fonction")
+async def lvl_up (screen):
     """Affiche la notification de montée de niveau"""
     en_cours = True
     time = Timer(1000)
@@ -22,3 +21,5 @@ def lvl_up (screen):
 
         if time.est_fini():
             en_cours = False
+
+        await asyncio.sleep(0)  # laisse le navigateur respirer
