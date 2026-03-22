@@ -105,6 +105,10 @@ async def menu():
                     #MOI
                     if i == 0:
                         pygame.mixer.music.stop()
+                        pygame.mixer.stop()
+                        pygame.mixer.quit()
+                        await asyncio.sleep(0.3)
+                        pygame.mixer.init()
                         pygame.init()
                         game = Game()
                         await game.run()
