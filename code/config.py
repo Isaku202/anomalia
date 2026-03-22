@@ -5,7 +5,7 @@ WEB = sys.platform == "emscripten"
 
 # Paramètres adaptés selon la plateforme
 if WEB:
-    MAP_ZOOM = 0.5
+    MAP_ZOOM = 0.35
     ANIM_SPEED = 13
     ANIM_ATK_SPEED = 7
     ANIM_MONSTRE_SPEED = 13
