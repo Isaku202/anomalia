@@ -1,20 +1,13 @@
 import asyncio
+import sys, os
+
+# Ajouter le dossier code/ au path pour que les imports fonctionnent
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "code"))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
 import pygame
-
 pygame.init()
-screen = pygame.display.set_mode((800, 600))
-clock = pygame.time.Clock()
 
-async def main():
-    running = True
-    while running:
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                running = False
+from page_menu import menu
 
-        screen.fill("red")
-        pygame.display.flip()
-        clock.tick(60)
-        await asyncio.sleep(0)
-
-asyncio.run(main())
+asyncio.run(menu())
