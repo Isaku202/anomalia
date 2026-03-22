@@ -135,23 +135,6 @@ class Monstre(AnimateSpriteMonstre, Character):
             self.timer.demarrer()
             self.preparation_attaque = True
 
-    # Méthodes mouvement 
-    def move_right(self):
-        """Déplacement vers la droite"""
-        Character.move_right(self)
-
-    def move_left(self):
-        """Déplacement vers la gauche"""
-        Character.move_left(self)
-
-    def move_up(self):
-        """Déplacement vers le haut"""
-        Character.move_up(self)
-
-    def move_down(self):
-        """Déplacement vers le bas"""
-        Character.move_down(self)
-
     def stop (self):
         self.image = self.anim_monstre["slime"]["mouvement"][0]
 
@@ -177,13 +160,3 @@ class Monstre(AnimateSpriteMonstre, Character):
                     self.has_hit = False
                     self.stop()
                     
-    def move_back(self):
-        """Retour à l'ancienne position en cas de collision"""
-        Character.move_back(self)
-
-    def save_location(self):
-        """Sauvegarde la position actuelle"""
-        Character.save_location(self)
-
-    def change_ani(self, nv_direction):
-        Character.change_ani(self, nv_direction)

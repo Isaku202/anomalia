@@ -126,8 +126,12 @@ class Pnj(SpritePnj, Character):
         return False
 
 
+    def update(self):
+        """Met à jour la position du pnj (nécessaire car héritage multiple)"""
+        Character.update(self)
+
     def quete_paul(self, player):
-        conditions = {"sang étrange bleu": 4}  
+        conditions = {"sang étrange bleu": 4}
         recompense = ("plume", 1)
         recompense_item = convertisseur_en_Item(recompense)
 
@@ -140,35 +144,3 @@ class Pnj(SpritePnj, Character):
         return False
 
 
-    def move(self):
-        Character.move(self)
-
-    def move_right(self):
-        Character.move_right(self)
-
-    def move_left(self):
-        Character.move_left(self)
-
-    def move_up(self):
-        Character.move_up(self)
-
-    def move_down(self):
-        Character.move_down(self)
-    
-    def charger_points(self, map_manager, map_name):
-        Character.charger_points(self, map_manager, map_name)
-
-    def update(self):
-        """Met à jour la position du pnj"""
-        Character.update(self)
-
-    def move_back(self):
-        """Retour à l'ancienne position en cas de collision"""
-        Character.move_back(self)
-
-    def save_location(self):
-        """Sauvegarde la position actuelle"""
-        Character.save_location(self)
-
-    def change_ani(self, nv_direction):
-        Character.change_ani(self, nv_direction)

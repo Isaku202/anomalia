@@ -1,4 +1,5 @@
 from Timer import Timer
+from utils import dessiner_texte_contour
 import pygame
 import sys, asyncio
 
@@ -25,21 +26,6 @@ async def game_over ():
     font_titre = pygame.font.Font(None, 130)
     font_petit = pygame.font.Font(None, 40)
 
-
-    def dessiner_texte_contour(surface, texte, font, couleur_texte, couleur_contour, centre, epaisseur=2):
-        """Dessine un texte avec un contour pour une meilleure lisibilité"""
-        # Dessiner le contour (en décalant le texte dans toutes les directions)
-        for dx in range(-epaisseur, epaisseur + 1):
-            for dy in range(-epaisseur, epaisseur + 1):
-                if dx != 0 or dy != 0:  # Ne pas dessiner au centre
-                    texte_contour = font.render(texte, True, couleur_contour)
-                    rect_contour = texte_contour.get_rect(center=(centre[0] + dx, centre[1] + dy))
-                    surface.blit(texte_contour, rect_contour)
-
-        #Dessiner le texte principal par-dessus
-        texte_surface = font.render(texte, True, couleur_texte)
-        texte_rect = texte_surface.get_rect(center=centre)
-        surface.blit(texte_surface, texte_rect)
 
     def dessiner_fond():
         """Dessine le fond en affichant un fond noir"""
