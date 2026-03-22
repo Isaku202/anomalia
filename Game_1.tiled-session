@@ -1,0 +1,242 @@
+{
+    "activeFile": "Map_graph/Map1.tmx",
+    "expandedProjectPaths": [
+    ],
+    "file.lastUsedOpenFilter": "All Files (*)",
+    "fileStates": {
+        "#nature": {
+            "scaleInDock": 1
+        },
+        "MAP1.1.tmx": {
+            "scale": 0.015625,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 89088,
+                "y": 74016
+            }
+        },
+        "Map1.tmx": {
+            "expandedObjectLayers": [
+                7
+            ],
+            "scale": 0.06,
+            "selectedLayer": 5,
+            "viewCenter": {
+                "x": 6408.333333333334,
+                "y": 5808.333333333333
+            }
+        },
+        "Map2.tmx": {
+            "scale": 0.03,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 2050,
+                "y": 6083.333333333335
+            }
+        },
+        "Map_graph/Map1.tmx": {
+            "expandedObjectLayers": [
+                7
+            ],
+            "scale": 0.242,
+            "selectedLayer": 4,
+            "viewCenter": {
+                "x": 4747.933884297521,
+                "y": 3743.8016528925627
+            }
+        },
+        "Map_graph/Nature_dessin.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Map_graph/Terre.tmx": {
+            "expandedObjectLayers": [
+                2
+            ],
+            "scale": 0.0846,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 3037.825059101655,
+                "y": 2559.101654846336
+            }
+        },
+        "Map_graph/chemin_papier.tsx": {
+            "scaleInDock": 1
+        },
+        "Map_graph/eau_papier2.tsx": {
+            "scaleInDock": 1
+        },
+        "Map_graph/grotte.tmx": {
+            "expandedObjectLayers": [
+                4
+            ],
+            "scale": 0.0562,
+            "selectedLayer": 8,
+            "viewCenter": {
+                "x": 4163.701067615659,
+                "y": 4154.804270462634
+            }
+        },
+        "Map_graph/matière_tiled/Animation_Flowers_Red.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Map_graph/matière_tiled/Animation_Flowers_White.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Map_graph/matière_tiled/chemin_papier.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 0.62
+        },
+        "Map_graph/matière_tiled/dongeon_tileset.tsx": {
+            "scaleInDock": 0.1042,
+            "scaleInEditor": 1
+        },
+        "Map_graph/matière_tiled/eau_papier2.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 0.4844
+        },
+        "Map_graph/matière_tiled/obj_papier.tsx": {
+            "scaleInDock": 0.62
+        },
+        "Map_graph/matière_tiled/sol_papier.tsx": {
+            "scaleInDock": 0.62,
+            "scaleInEditor": 1
+        },
+        "Map_graph/matière_tiled/sol_papier_fleur.tsx": {
+            "scaleInDock": 0.62
+        },
+        "Map_graph/nature.tsx": {
+            "scaleInDock": 1
+        },
+        "Map_graph/obj_papier.tsx": {
+            "scaleInDock": 1
+        },
+        "Map_graph/sol_papier.tsx": {
+            "scaleInDock": 1
+        },
+        "Map_graph/sol_papier_fleur.tsx": {
+            "scaleInDock": 1
+        },
+        "Nature_dessin.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Nature_dessin1.1.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1.9
+        },
+        "Nature_dessin1.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 0.75
+        },
+        "Nature_papier.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "chemin_papier.tsx": {
+            "dynamicWrapping": true,
+            "scaleInDock": 0.62,
+            "scaleInEditor": 1
+        },
+        "eau_papier.tsx": {
+            "scaleInDock": 0.181,
+            "scaleInEditor": 1
+        },
+        "eau_papier2.tsx": {
+            "dynamicWrapping": true,
+            "scaleInDock": 0.62,
+            "scaleInEditor": 1
+        },
+        "map1.tmx": {
+            "scale": 0.47,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 517.0212765957448,
+                "y": 930.8510638297872
+            }
+        },
+        "matière_tiled/chemin_papier.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "matière_tiled/eau_papier2.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "matière_tiled/nature.tsx": {
+            "scaleInDock": 0.62,
+            "scaleInEditor": 1
+        },
+        "matière_tiled/obj_papier.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "matière_tiled/sol_papier.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "matière_tiled/sol_papier_fleur.tsx": {
+            "scaleInDock": 0.62,
+            "scaleInEditor": 1
+        },
+        "nature.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "nature_papier_vert.tsx": {
+            "scaleInDock": 0.2025,
+            "scaleInEditor": 1
+        },
+        "obj_papier.tsx": {
+            "scaleInDock": 0.62,
+            "scaleInEditor": 1
+        },
+        "objets_paneau.tsx": {
+            "scaleInDock": 0.62,
+            "scaleInEditor": 1
+        },
+        "sol_papier.tsx": {
+            "scaleInDock": 0.62,
+            "scaleInEditor": 1
+        },
+        "sol_papier_fleur.tsx": {
+            "scaleInDock": 0.62,
+            "scaleInEditor": 1
+        },
+        "untitled.tmx": {
+            "scale": 0.16,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1000,
+                "y": 1303.125
+            }
+        }
+    },
+    "last.imagePath": "/Users/examen/Desktop/projet_rpg/Map_graph/matière_tiled",
+    "openFiles": [
+        "Map_graph/matière_tiled/sol_papier.tsx",
+        "Map_graph/Terre.tmx",
+        "Map_graph/matière_tiled/dongeon_tileset.tsx",
+        "Map_graph/grotte.tmx",
+        "Map_graph/matière_tiled/Animation_Flowers_Red.tsx",
+        "Map_graph/matière_tiled/Animation_Flowers_White.tsx",
+        "Map_graph/Map1.tmx"
+    ],
+    "project": "Game_1.tiled-project",
+    "recentFiles": [
+        "Map_graph/matière_tiled/sol_papier.tsx",
+        "Map_graph/Terre.tmx",
+        "Map_graph/matière_tiled/dongeon_tileset.tsx",
+        "Map_graph/grotte.tmx",
+        "Map_graph/matière_tiled/Animation_Flowers_Red.tsx",
+        "Map_graph/matière_tiled/Animation_Flowers_White.tsx",
+        "Map_graph/Map1.tmx",
+        "matière_tiled/nature.tsx",
+        "sol_papier.tsx",
+        "obj_papier.tsx",
+        "objets_paneau.tsx",
+        "sol_papier_fleur.tsx"
+    ]
+}
