@@ -13,7 +13,7 @@ if WEB:
     ANIM_MONSTRE_ATK_SPEED = 12
 else:
     MAP_ZOOM = 0.25
-    SPRITE_SCALE = 2  # rescale x2 en local pour retrouver la taille originale
+    SPRITE_SCALE = 2
     ANIM_SPEED = 50
     ANIM_ATK_SPEED = 25
     ANIM_MONSTRE_SPEED = 50
