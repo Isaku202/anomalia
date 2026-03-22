@@ -27,23 +27,37 @@ jobs:
 
       - name: Back button + black background
         run: |
-          python3 -c "
+          python3 << 'PYEOF'
           html = open('build/web/index.html').read()
-          css = '''<style>
+
+          inject = """
+          <style>
           body { background: #000 !important; }
           #back-btn {
-            position: fixed; top: 10px; left: 10px; z-index: 999999;
-            background: rgba(0,0,0,0.6); color: #ffd700; padding: 8px 16px;
-            text-decoration: none; border-radius: 8px; font-family: arial;
-            font-size: 14px; border: 1px solid #ffd700;
+            position: fixed;
+            top: 12px;
+            left: 12px;
+            z-index: 9999999;
+            background: rgba(0,0,0,0.8);
+            color: #ffd700;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-family: arial;
+            font-size: 14px;
+            font-weight: bold;
+            border: 2px solid #ffd700;
+            cursor: pointer;
+            pointer-events: auto;
           }
           #back-btn:hover { background: rgba(255,215,0,0.2); }
-          </style>'''
-          btn = '<a id=\"back-btn\" href=\"#\" onclick=\"try{document.querySelectorAll(\\\"audio\\\").forEach(a=>a.pause());var ctx=new(window.AudioContext||window.webkitAudioContext)();ctx.close();}catch(e){}setTimeout(()=>window.location.href=\\\"../\\\",300);return false;\">&#8592; Retour</a>'
-          html = html.replace('</head>', css + '</head>')
-          html = html.replace('</body>', btn + '</body>')
+          </style>
+          <a id="back-btn" href="../">\u2190 Retour</a>
+          """
+
+          html = html.replace('<body>', '<body>' + inject)
           open('build/web/index.html', 'w').write(html)
-          "
+          PYEOF
 
       - name: Assemble site
         run: |
