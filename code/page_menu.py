@@ -104,6 +104,7 @@ async def menu():
                 if bouton.est_clique(pos_souris, event):
                     #MOI
                     if i == 0:
+                        pygame.mixer.music.stop()
                         pygame.init()
                         game = Game()
                         await game.run()
