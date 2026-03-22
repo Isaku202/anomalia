@@ -41,7 +41,7 @@ class AnimateSpriteMonstre (pygame.sprite.Sprite):
         """Permet de timer l'enchainement des images des animations de déplacement"""
         self.ani_counter +=1
 
-        if self.ani_counter >= 50:
+        if self.ani_counter >= 10:
             self.ani_counter = 0
             self.current_frame += 1
 
@@ -59,7 +59,7 @@ class AnimateSpriteMonstre (pygame.sprite.Sprite):
         """Permet de timer l'animation de l'attaque"""
         self.ani_counter +=1
 
-        if self.ani_counter >= 45:
+        if self.ani_counter >= 9:
             if not loop :
                 return True
 
