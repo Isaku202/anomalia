@@ -39,7 +39,7 @@ jobs:
           }
           #back-btn:hover { background: rgba(255,215,0,0.2); }
           </style>'''
-          btn = '<a id=\"back-btn\" href=\"../\">&#8592; Retour</a>'
+          btn = '<a id=\"back-btn\" href=\"#\" onclick=\"try{document.querySelectorAll(\\\"audio\\\").forEach(a=>a.pause());var ctx=new(window.AudioContext||window.webkitAudioContext)();ctx.close();}catch(e){}setTimeout(()=>window.location.href=\\\"../\\\",300);return false;\">&#8592; Retour</a>'
           html = html.replace('</head>', css + '</head>')
           html = html.replace('</body>', btn + '</body>')
           open('build/web/index.html', 'w').write(html)
