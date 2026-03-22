@@ -24,5 +24,5 @@ class SpritePnj (pygame.sprite.Sprite):
         from config import SPRITE_SCALE
         image = pygame.Surface([x_rec, y_rec])
         image.blit(self.sprite_sheet, (0, 0), (x, y, x_rec, y_rec))
-        image = pygame.transform.scale(image, (x_rec * SPRITE_SCALE, y_rec * SPRITE_SCALE))
+        image = pygame.transform.scale(image, (int(x_rec * SPRITE_SCALE), int(y_rec * SPRITE_SCALE)))
         return image

@@ -6,7 +6,7 @@ WEB = sys.platform == "emscripten"
 # Paramètres adaptés selon la plateforme
 if WEB:
     MAP_ZOOM = 0.25
-    SPRITE_SCALE = 1  # pas de rescale en web (sprites déjà à la bonne taille)
+    SPRITE_SCALE = 1.5
     ANIM_SPEED = 13
     ANIM_ATK_SPEED = 7
     ANIM_MONSTRE_SPEED = 13
