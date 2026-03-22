@@ -25,19 +25,17 @@ jobs:
       - name: Build with pygbag
         run: python -m pygbag --build .
 
-      - name: Add download button
+      - name: Assemble site
         run: |
-          python3 -c "
-          html = open('build/web/index.html').read()
-          btn = '<a href=\"https://github.com/Isaku202/anomalia/releases/latest/download/anomalia-v1.0.zip\" style=\"position:fixed;top:10px;right:10px;z-index:999999;background:#4CAF50;color:white;padding:10px 20px;text-decoration:none;border-radius:8px;font-family:arial;font-weight:bold;font-size:14px;box-shadow:0 2px 5px rgba(0,0,0,0.3);\">Telecharger le jeu</a>'
-          html = html.replace('</body>', btn + '</body>')
-          open('build/web/index.html', 'w').write(html)
-          "
+          mkdir -p site/play
+          cp web/index.html site/
+          cp web/preview.png site/
+          cp build/web/* site/play/
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: build/web
+          path: site
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4

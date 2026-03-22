@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anomalia - RPG</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #0a0a0f;
+            color: #e0e0e0;
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px 30px;
+        }
+
+        header h1 {
+            font-size: 4em;
+            color: #ffd700;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+            letter-spacing: 8px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            color: #888;
+            font-style: italic;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .game-card {
+            background: linear-gradient(145deg, #1a1a2e, #16213e);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid #2a2a4a;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+            color: inherit;
+        }
+
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.15);
+            border-color: #ffd700;
+        }
+
+        .game-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .game-info {
+            padding: 30px;
+        }
+
+        .game-info h2 {
+            font-size: 1.8em;
+            color: #ffd700;
+            margin-bottom: 12px;
+        }
+
+        .game-info p {
+            font-size: 1.05em;
+            line-height: 1.7;
+            color: #aaa;
+            margin-bottom: 20px;
+        }
+
+        .tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+
+        .tag {
+            background: rgba(255, 215, 0, 0.1);
+            color: #ffd700;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-size: 1em;
+            font-weight: bold;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-play {
+            background: linear-gradient(135deg, #ffd700, #f0a500);
+            color: #0a0a0f;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .btn-play:hover {
+            box-shadow: 0 6px 25px rgba(255, 215, 0, 0.5);
+        }
+
+        .btn-download {
+            background: transparent;
+            color: #4CAF50;
+            border: 2px solid #4CAF50;
+        }
+
+        .btn-download:hover {
+            background: rgba(76, 175, 80, 0.1);
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.2);
+        }
+
+        .btn-github {
+            background: transparent;
+            color: #888;
+            border: 2px solid #444;
+        }
+
+        .btn-github:hover {
+            border-color: #888;
+            color: #ccc;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #444;
+            font-size: 0.9em;
+        }
+
+        footer a {
+            color: #666;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #ffd700;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #555;
+            font-size: 0.95em;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .perf-note {
+            text-align: center;
+            color: #666;
+            font-size: 0.85em;
+            margin-top: 8px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>ANOMALIA</h1>
+        <p>Je t'attendrai... de L'autre cote</p>
+    </header>
+
+    <div class="container">
+        <p class="subtitle">Mes projets</p>
+
+        <a class="game-card" href="play/" onclick="event.preventDefault(); window.location.href='play/';">
+            <img class="game-image" src="preview.png" alt="Anomalia RPG">
+            <div class="game-info">
+                <h2>Anomalia</h2>
+                <p>
+                    Un RPG 2D ou vous incarnez une anomalie perdue dans un monde etrange.
+                    Explorez, combattez des slimes, accomplissez des quetes
+                    et decouvrez les secrets de ce monde.
+                </p>
+                <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Pygame</span>
+                    <span class="tag">RPG</span>
+                    <span class="tag">2D</span>
+                    <span class="tag">Tiled</span>
+                </div>
+                <div class="buttons" onclick="event.stopPropagation();">
+                    <a class="btn btn-play" href="play/">Jouer en ligne</a>
+                    <a class="btn btn-download" href="https://github.com/Isaku202/anomalia/releases/latest/download/anomalia-v1.0.zip">Telecharger</a>
+                    <a class="btn btn-github" href="https://github.com/Isaku202/anomalia">GitHub</a>
+                </div>
+                <p class="perf-note">Version web : performances reduites. Telechargez pour la meilleure experience.</p>
+            </div>
+        </a>
+    </div>
+
+    <footer>
+        <p>Fait par <a href="https://github.com/Isaku202">@Isaku202</a></p>
+    </footer>
+
+</body>
+</html>
