@@ -25,6 +25,26 @@ jobs:
       - name: Build with pygbag
         run: python -m pygbag --build .
 
+      - name: Back button + black background
+        run: |
+          python3 -c "
+          html = open('build/web/index.html').read()
+          css = '''<style>
+          body { background: #000 !important; }
+          #back-btn {
+            position: fixed; top: 10px; left: 10px; z-index: 999999;
+            background: rgba(0,0,0,0.6); color: #ffd700; padding: 8px 16px;
+            text-decoration: none; border-radius: 8px; font-family: arial;
+            font-size: 14px; border: 1px solid #ffd700;
+          }
+          #back-btn:hover { background: rgba(255,215,0,0.2); }
+          </style>'''
+          btn = '<a id=\"back-btn\" href=\"../\">&#8592; Retour</a>'
+          html = html.replace('</head>', css + '</head>')
+          html = html.replace('</body>', btn + '</body>')
+          open('build/web/index.html', 'w').write(html)
+          "
+
       - name: Assemble site
         run: |
           mkdir -p site/play
