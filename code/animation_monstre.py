@@ -70,7 +70,8 @@ class AnimateSpriteMonstre (pygame.sprite.Sprite):
 
     def get_image (self, x , y, x_rec = int(370*S), y_rec = int(220*S)):
         """renvoie l'image coupée"""
+        from config import SPRITE_SCALE
         image = pygame.Surface([x_rec, y_rec])
         image.blit(self.sprite_sheet, (0,0), (x,y, x_rec, y_rec))
-        image = pygame.transform.scale(image, (x_rec * 2, y_rec * 2))
+        image = pygame.transform.scale(image, (x_rec * SPRITE_SCALE, y_rec * SPRITE_SCALE))
         return image

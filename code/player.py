@@ -129,9 +129,10 @@ class Player (animation.AnimateSprite):
         self.feet.midbottom = self.rect.midbottom
 
     def get_image (self, x , y, x_rec = 215, y_rec = 320):
+        from config import SPRITE_SCALE
         image = pygame.Surface([x_rec, y_rec])
         image.blit(self.sprite_sheet, (0,0), (x,y, x_rec, y_rec))
-        image = pygame.transform.scale(image, (x_rec * 2, y_rec * 2))
+        image = pygame.transform.scale(image, (x_rec * SPRITE_SCALE, y_rec * SPRITE_SCALE))
         return image
     
     def stop (self):

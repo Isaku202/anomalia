@@ -27,7 +27,12 @@ jobs:
 
       - name: Add download button
         run: |
-          sed -i 's|<div id="infobox">Loading, please wait ...</div>|<div id="infobox">Loading, please wait ...</div><a id="download-btn" href="https://github.com/Isaku202/anomalia/releases/latest/download/anomalia-v1.0.zip" style="position:fixed;top:10px;right:10px;z-index:999999;background:#4CAF50;color:white;padding:10px 20px;text-decoration:none;border-radius:8px;font-family:arial;font-weight:bold;font-size:14px;box-shadow:0 2px 5px rgba(0,0,0,0.3);">⬇ Télécharger le jeu</a>|' build/web/index.html
+          python3 -c "
+          html = open('build/web/index.html').read()
+          btn = '<a href=\"https://github.com/Isaku202/anomalia/releases/latest/download/anomalia-v1.0.zip\" style=\"position:fixed;top:10px;right:10px;z-index:999999;background:#4CAF50;color:white;padding:10px 20px;text-decoration:none;border-radius:8px;font-family:arial;font-weight:bold;font-size:14px;box-shadow:0 2px 5px rgba(0,0,0,0.3);\">Telecharger le jeu</a>'
+          html = html.replace('</body>', btn + '</body>')
+          open('build/web/index.html', 'w').write(html)
+          "
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
