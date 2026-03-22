@@ -5,7 +5,13 @@ import pygame, sys, os, asyncio
 
 async def menu():
     pygame.init()
-    musique_lancee = False
+    try:
+        mus = Musique()
+        mus.charger("guitar_chelou.ogg")
+        mus.set_volume(0.7)
+        mus.jouer()
+    except Exception:
+        pass
 
     # Constante
     LARGEUR, HAUTEUR = 800, 600
@@ -92,17 +98,6 @@ async def menu():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 en_cours = False
-
-            # Lance la musique au premier clic (requis par les navigateurs)
-            if event.type == pygame.MOUSEBUTTONDOWN and not musique_lancee:
-                try:
-                    mus = Musique()
-                    mus.charger("guitar_chelou.ogg")
-                    mus.set_volume(0.7)
-                    mus.jouer()
-                except Exception:
-                    pass
-                musique_lancee = True
 
             # Vérification des clics sur les boutons (IA)
             for i, bouton in enumerate(boutons):

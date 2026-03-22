@@ -128,9 +128,10 @@ class Player (animation.AnimateSprite):
         self.rect.topleft = self.position
         self.feet.midbottom = self.rect.midbottom
 
-    def get_image (self, x , y, x_rec = 430, y_rec = 640): 
+    def get_image (self, x , y, x_rec = 215, y_rec = 320):
         image = pygame.Surface([x_rec, y_rec])
         image.blit(self.sprite_sheet, (0,0), (x,y, x_rec, y_rec))
+        image = pygame.transform.scale(image, (x_rec * 2, y_rec * 2))
         return image
     
     def stop (self):
