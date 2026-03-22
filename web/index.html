@@ -20,7 +20,7 @@
 
         header {
             text-align: center;
-            padding: 60px 20px 30px;
+            padding: 60px 20px 10px;
         }
 
         header h1 {
@@ -31,10 +31,16 @@
             margin-bottom: 10px;
         }
 
-        header p {
+        header p.quote {
             font-size: 1.2em;
             color: #888;
             font-style: italic;
+            margin-bottom: 5px;
+        }
+
+        header p.author {
+            font-size: 0.95em;
+            color: #555;
         }
 
         .container {
@@ -43,16 +49,21 @@
             padding: 40px 20px;
         }
 
+        .section-title {
+            text-align: center;
+            color: #555;
+            font-size: 0.95em;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
         .game-card {
             background: linear-gradient(145deg, #1a1a2e, #16213e);
             border-radius: 16px;
             overflow: hidden;
             border: 1px solid #2a2a4a;
             transition: transform 0.3s, box-shadow 0.3s;
-            cursor: pointer;
-            text-decoration: none;
-            display: block;
-            color: inherit;
         }
 
         .game-card:hover {
@@ -75,21 +86,51 @@
         .game-info h2 {
             font-size: 1.8em;
             color: #ffd700;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
         }
 
-        .game-info p {
+        .game-info .themes {
+            font-size: 0.9em;
+            color: #777;
+            margin-bottom: 18px;
+        }
+
+        .game-info .synopsis {
             font-size: 1.05em;
             line-height: 1.7;
             color: #aaa;
             margin-bottom: 20px;
         }
 
+        .gameplay-section {
+            margin-bottom: 22px;
+        }
+
+        .gameplay-section h3 {
+            font-size: 1em;
+            color: #ccc;
+            margin-bottom: 10px;
+        }
+
+        .gameplay-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .gameplay-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.85em;
+            color: #999;
+        }
+
         .tags {
             display: flex;
             gap: 10px;
             flex-wrap: wrap;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         .tag {
@@ -101,10 +142,45 @@
             border: 1px solid rgba(255, 215, 0, 0.2);
         }
 
+        .controls {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+            padding: 18px;
+            margin-bottom: 22px;
+            border: 1px solid #1e1e3a;
+        }
+
+        .controls h3 {
+            font-size: 1em;
+            color: #ccc;
+            margin-bottom: 12px;
+        }
+
+        .controls-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px 20px;
+        }
+
+        .control-item {
+            font-size: 0.85em;
+            color: #888;
+        }
+
+        .control-item kbd {
+            background: #2a2a4a;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: monospace;
+            color: #ffd700;
+            font-size: 0.9em;
+        }
+
         .buttons {
             display: flex;
             gap: 15px;
             flex-wrap: wrap;
+            margin-bottom: 12px;
         }
 
         .btn {
@@ -153,9 +229,58 @@
             color: #ccc;
         }
 
+        .perf-note {
+            font-size: 0.8em;
+            color: #555;
+            font-style: italic;
+        }
+
+        .tech-section {
+            margin-top: 40px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+            border: 1px solid #1e1e3a;
+        }
+
+        .tech-section h3 {
+            font-size: 1.1em;
+            color: #ccc;
+            margin-bottom: 15px;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 12px;
+        }
+
+        .tech-item {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 12px;
+            border-radius: 8px;
+        }
+
+        .tech-item strong {
+            color: #ffd700;
+            font-size: 0.9em;
+        }
+
+        .tech-item p {
+            color: #777;
+            font-size: 0.8em;
+            margin-top: 4px;
+        }
+
+        .inspirations {
+            margin-top: 15px;
+            font-size: 0.85em;
+            color: #666;
+        }
+
         footer {
             text-align: center;
-            padding: 40px 20px;
+            padding: 50px 20px;
             color: #444;
             font-size: 0.9em;
         }
@@ -168,63 +293,112 @@
         footer a:hover {
             color: #ffd700;
         }
-
-        .subtitle {
-            text-align: center;
-            color: #555;
-            font-size: 0.95em;
-            margin-bottom: 40px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .perf-note {
-            text-align: center;
-            color: #666;
-            font-size: 0.85em;
-            margin-top: 8px;
-            font-style: italic;
-        }
     </style>
 </head>
 <body>
 
     <header>
         <h1>ANOMALIA</h1>
-        <p>Je t'attendrai... de L'autre cote</p>
+        <p class="quote">"Je t'attendrai... de L'autre cote"</p>
+        <p class="author">par Lou-Ann VIALADE</p>
     </header>
 
     <div class="container">
-        <p class="subtitle">Mes projets</p>
+        <p class="section-title">Projet</p>
 
-        <a class="game-card" href="play/" onclick="event.preventDefault(); window.location.href='play/';">
+        <div class="game-card">
             <img class="game-image" src="preview.png" alt="Anomalia RPG">
             <div class="game-info">
                 <h2>Anomalia</h2>
-                <p>
-                    Un RPG 2D ou vous incarnez une anomalie perdue dans un monde etrange.
-                    Explorez, combattez des slimes, accomplissez des quetes
-                    et decouvrez les secrets de ce monde.
+                <p class="themes">Enigme &bull; Fantasy &bull; Anomalie &bull; Distorsion</p>
+
+                <p class="synopsis">
+                    Orin se retrouve sans aucun souvenir, perdu et confus dans un environnement
+                    qui lui est completement inconnu et hostile. Sans aucun but, il est amene dans
+                    son errance a rencontrer des formes de vie similaires a lui qui vont lui permettre
+                    de retrouver peu a peu ses souvenirs et surtout a comprendre la raison de sa
+                    presence dans ce monde si etrange.
                 </p>
+
+                <div class="gameplay-section">
+                    <h3>Gameplay</h3>
+                    <div class="gameplay-grid">
+                        <span class="gameplay-item">Combat libre par hitbox</span>
+                        <span class="gameplay-item">Exploration multi-maps</span>
+                        <span class="gameplay-item">Quetes et dialogues</span>
+                        <span class="gameplay-item">Inventaire</span>
+                        <span class="gameplay-item">Systeme de niveaux</span>
+                        <span class="gameplay-item">Potions et soins</span>
+                        <span class="gameplay-item">Plusieurs fins possibles</span>
+                        <span class="gameplay-item">Enigmes et indices caches</span>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <h3>Commandes</h3>
+                    <div class="controls-grid">
+                        <span class="control-item"><kbd>Fleches</kbd> Se deplacer</span>
+                        <span class="control-item"><kbd>Espace</kbd> Attaquer / Dialogue</span>
+                        <span class="control-item"><kbd>E</kbd> Inventaire</span>
+                        <span class="control-item"><kbd>Z</kbd> Potion de soin</span>
+                        <span class="control-item"><kbd>Maj droit</kbd> Sprint</span>
+                        <span class="control-item"><kbd>=</kbd> Vitesse normale</span>
+                    </div>
+                </div>
+
                 <div class="tags">
                     <span class="tag">Python</span>
                     <span class="tag">Pygame</span>
-                    <span class="tag">RPG</span>
-                    <span class="tag">2D</span>
+                    <span class="tag">Pytmx</span>
+                    <span class="tag">Pyscroll</span>
                     <span class="tag">Tiled</span>
+                    <span class="tag">POO</span>
+                    <span class="tag">RPG 2D</span>
                 </div>
-                <div class="buttons" onclick="event.stopPropagation();">
+
+                <div class="buttons">
                     <a class="btn btn-play" href="play/">Jouer en ligne</a>
                     <a class="btn btn-download" href="https://github.com/Isaku202/anomalia/releases/latest/download/anomalia-v1.0.zip">Telecharger</a>
-                    <a class="btn btn-github" href="https://github.com/Isaku202/anomalia">GitHub</a>
+                    <a class="btn btn-github" href="https://github.com/Isaku202/anomalia">Code source</a>
                 </div>
-                <p class="perf-note">Version web : performances reduites. Telechargez pour la meilleure experience.</p>
+                <p class="perf-note">La version en ligne a des performances reduites. Telechargez le jeu pour la meilleure experience.</p>
             </div>
-        </a>
+        </div>
+
+        <div class="tech-section">
+            <h3>Stack technique</h3>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <strong>Pygame</strong>
+                    <p>Moteur du jeu, affichage, sons, evenements clavier</p>
+                </div>
+                <div class="tech-item">
+                    <strong>Pytmx</strong>
+                    <p>Chargement des maps Tiled (.tmx), objets et spawns</p>
+                </div>
+                <div class="tech-item">
+                    <strong>Pyscroll</strong>
+                    <p>Rendu optimise des tilemaps, camera et calques</p>
+                </div>
+                <div class="tech-item">
+                    <strong>Tiled</strong>
+                    <p>Editeur de maps avec collisions, portails et zones</p>
+                </div>
+                <div class="tech-item">
+                    <strong>Pygbag</strong>
+                    <p>Compilation WebAssembly pour jouer dans le navigateur</p>
+                </div>
+                <div class="tech-item">
+                    <strong>GitHub Actions</strong>
+                    <p>Build et deploiement automatique sur GitHub Pages</p>
+                </div>
+            </div>
+            <p class="inspirations">Inspirations : Tunic, Zelda Breath of the Wild</p>
+        </div>
     </div>
 
     <footer>
-        <p>Fait par <a href="https://github.com/Isaku202">@Isaku202</a></p>
+        <p>Fait par <a href="https://github.com/Isaku202">@Isaku202</a> &mdash; Projet NSI</p>
     </footer>
 
 </body>
