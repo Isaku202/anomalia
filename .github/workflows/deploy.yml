@@ -25,42 +25,6 @@ jobs:
       - name: Build with pygbag
         run: python -m pygbag --build .
 
-      - name: Fullscreen canvas + back button
-        run: |
-          python3 -c "
-          html = open('build/web/index.html').read()
-
-          # CSS pour canvas plein écran avec ratio conservé
-          css = '''<style>
-          canvas.emscripten {
-            position: fixed !important;
-            top: 50% !important;
-            left: 50% !important;
-            transform: translate(-50%, -50%) !important;
-            max-width: 100vw !important;
-            max-height: 100vh !important;
-            width: auto !important;
-            height: 100vh !important;
-            aspect-ratio: 4/3;
-          }
-          body { overflow: hidden; margin: 0; background: #000; }
-          #back-btn {
-            position: fixed; top: 10px; left: 10px; z-index: 999999;
-            background: rgba(0,0,0,0.6); color: #ffd700; padding: 8px 16px;
-            text-decoration: none; border-radius: 8px; font-family: arial;
-            font-size: 14px; border: 1px solid #ffd700;
-          }
-          #back-btn:hover { background: rgba(255,215,0,0.2); }
-          </style>'''
-
-          # Bouton retour
-          btn = '<a id=\"back-btn\" href=\"../\">&#8592; Retour</a>'
-
-          html = html.replace('</head>', css + '</head>')
-          html = html.replace('</body>', btn + '</body>')
-          open('build/web/index.html', 'w').write(html)
-          "
-
       - name: Assemble site
         run: |
           mkdir -p site/play
